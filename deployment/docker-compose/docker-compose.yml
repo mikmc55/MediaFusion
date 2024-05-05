@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   mediafusion:
-    image: mhdzumair/mediafusion:beta
+    build:
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     env_file:
