@@ -42,7 +42,8 @@ services:
       - "6379:6379"
 
   dramatiq-worker:
-    image: mhdzumair/mediafusion:beta
+    build:
+      dockerfile: Dockerfile
     command: ["pipenv", "run", "dramatiq", "api.task", "-p", "1", "-t", "1", "--queues", "scrapy"]
     env_file:
       - .env
